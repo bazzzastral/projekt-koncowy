@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-image:url("./assets/milky-way.jpg");
+    font-family: 'Zen Dots', cursive;
+    background-image: url("./assets/milky-way.jpg");
     background-repeat: no-repeat;
     color: whitesmoke;
-    background-size: 100%;
 }
