@@ -1,3 +1,9 @@
-<h1>My Hangar</h1>
-<app-space-ship *ngFor= "let spaceShip of spaceShips" [spaceShip]="spaceShip"></app-space-ship>
-<app-pilot-room></app-pilot-room>
+<div class="main-container">
+    <div class="main-container-item">
+        <h1>My hangar</h1>
+        <app-space-ship *ngFor="let spaceShip of spaceShips" [spaceShip]="spaceShip"></app-space-ship>
+    </div>
+    <div class= "main-container-item">
+        <app-pilot-room></app-pilot-room>
+    </div>
+</div>

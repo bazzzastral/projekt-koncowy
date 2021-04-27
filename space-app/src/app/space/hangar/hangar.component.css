@@ -1,0 +1,9 @@
+.main-container{
+    display: flex;
+}
+.main-container-item{
+    flex:1;
+    flex-basis: 50%;
+    margin: 50px;
+    text-align: center;
+}

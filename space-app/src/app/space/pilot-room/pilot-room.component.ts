@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pilot } from '../pilot';
 
 @Component({
   selector: 'app-pilot-room',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PilotRoomComponent implements OnInit {
 
+  pilots: Pilot[] =[];
+  selectedPilot: Pilot =null;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.pilots.push(new Pilot('Fredie Mercury', './assets/mercury-pilot.png'))
+    this.pilots.push(new Pilot('Tom Araya'))
+  }
+
+  select(pilot: Pilot): void {
+    this.selectedPilot = pilot;
   }
 
 }
