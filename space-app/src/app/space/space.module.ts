@@ -5,13 +5,17 @@ import { CommonModule } from '@angular/common';
 import { HangarComponent } from './hangar/hangar.component';
 import { SpaceShipComponent } from './space-ship/space-ship.component';
 import { SpaceRoutingModule } from './space-routing.module';
+import { PilotRoomComponent } from './pilot-room/pilot-room.component';
+import { PilotComponent } from './pilot/pilot.component';
 
 
 
 @NgModule({
   declarations: [
     HangarComponent,
-    SpaceShipComponent
+    SpaceShipComponent,
+    PilotRoomComponent,
+    PilotComponent
     
   ],
   exports: [

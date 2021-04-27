@@ -1,7 +1,7 @@
-import { SpaceShip } from './space-ship'
-
+import { SpaceShip } from './space-ship';
+import { Pilot } from './pilot';
 export class BomberShip extends SpaceShip{
-    constructor(){
-        super('F-16','/assets/raptor.png')
+    constructor(pilot?: Pilot){
+        super('F-16','/assets/statek.png', pilot)
     }
 }

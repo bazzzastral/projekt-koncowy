@@ -2,6 +2,8 @@
 
 <div class = "images">
     <img [src]="spaceShip.imgUrl">
+    <img class='pilot' *ngIf="spaceShip.pilot" [src]="spaceShip.pilot.imgUrl">
+    
 </div>
 <div class="health" [title]="'Health' + spaceShip.health + '%'">
     <div [style.width.%]= "spaceShip.health"></div>
@@ -11,3 +13,5 @@
 
 <div class="property" [class.active]= "spaceShip.activeWeapons">WEAPONS
 </div>
+
+
