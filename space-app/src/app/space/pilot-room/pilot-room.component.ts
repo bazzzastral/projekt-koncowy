@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Pilot } from '../pilot';
+
 
 @Component({
   selector: 'app-pilot-room',
@@ -7,7 +8,7 @@ import { Pilot } from '../pilot';
   styleUrls: ['./pilot-room.component.css']
 })
 export class PilotRoomComponent implements OnInit {
-
+  @Output() selected = new EventEmitter<Pilot>()
   pilots: Pilot[] =[];
   selectedPilot: Pilot =null;
 
@@ -18,8 +19,14 @@ export class PilotRoomComponent implements OnInit {
     this.pilots.push(new Pilot('Tom Araya'))
   }
 
-  select(pilot: Pilot): void {
+  select(pilot: Pilot):void {
     this.selectedPilot = pilot;
+      this.selected.emit(pilot)
   }
+  pilotLeave(pilot:Pilot):void {
 
+  }
+  pilotReturn(pilot:Pilot):void {
+
+  }
 }
