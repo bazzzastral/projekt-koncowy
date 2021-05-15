@@ -8,7 +8,8 @@ import { Pilot } from '../pilot';
   styleUrls: ['./pilot-room.component.css']
 })
 export class PilotRoomComponent implements OnInit {
-  @Output() selected = new EventEmitter<Pilot>()
+
+  @Output() selected = new EventEmitter<Pilot>();
   pilots: Pilot[] =[];
   selectedPilot: Pilot =null;
 
@@ -23,10 +24,12 @@ export class PilotRoomComponent implements OnInit {
     this.selectedPilot = pilot;
       this.selected.emit(pilot)
   }
-  pilotLeave(pilot:Pilot):void {
-
+  pilotLeave():void {
+    const index =this.pilots.indexOf(this.selectedPilot);
+    this.pilots.splice(index,1);
+    this.select(null);
   }
   pilotReturn(pilot:Pilot):void {
-
+    
   }
 }

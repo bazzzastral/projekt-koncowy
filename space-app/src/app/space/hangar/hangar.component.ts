@@ -4,14 +4,16 @@ import { FighterShips } from '../fighter-ships';
 import { Pilot } from '../pilot';
 import { PilotRoomComponent } from '../pilot-room/pilot-room.component';
 import { SpaceShip } from '../space-ship';
+
+
 @Component({
   selector: 'app-hangar',
   templateUrl: './hangar.component.html',
   styleUrls: ['./hangar.component.css']
 })
 export class HangarComponent implements OnInit {
-  @ViewChild(PilotRoomComponent) pilotRoom: PilotRoomComponent;
 
+  @ViewChild(PilotRoomComponent) pilotRoom: PilotRoomComponent;
   spaceShips: SpaceShip[] =[];
   selectedPilot: Pilot = null;
 
@@ -24,9 +26,11 @@ export class HangarComponent implements OnInit {
     
   }
   assignPilot(spaceShip:SpaceShip):void{
-    console.log("ASSIGN",spaceShip)
+    spaceShip.pilot = this.selectedPilot;
+    this.pilotRoom.pilotLeave(); 
   }
   deassignPilot(spaceShip:SpaceShip):void{
-    console.log("DEASSIGN",spaceShip)
+    this.pilotRoom.pilotReturn(spaceShip.pilot);
+    spaceShip.pilot = null
   }
 }
