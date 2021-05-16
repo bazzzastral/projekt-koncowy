@@ -30,6 +30,6 @@ export class PilotRoomComponent implements OnInit {
     this.select(null);
   }
   pilotReturn(pilot:Pilot):void {
-    
+    this.pilots.push(pilot);
   }
 }
