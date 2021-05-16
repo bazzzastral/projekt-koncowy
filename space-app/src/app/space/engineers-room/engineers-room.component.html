@@ -1,5 +1,7 @@
 <h1>Engineers Room</h1>
-
+<p>
+    Aktualna liczba smalotów to: {{shipCount|async}} 
+</p>
 <form [formGroup]= "form" (ngSubmit)="orderSpaceShip(form.value)">
     
     <div class="control-group">

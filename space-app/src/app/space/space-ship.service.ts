@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { from, interval, Observable } from 'rxjs';
-import { map, take  } from 'rxjs/operators';
+import { BehaviorSubject, from, interval, Observable } from 'rxjs';
+import { map, take, tap } from 'rxjs/operators';
 import { BomberShip } from './bomber-ship';
 import { FighterShips } from './fighter-ships';
 import { OrderFromValue } from './order-from-value';
@@ -14,6 +14,8 @@ export class SpaceShipService {
 
 static shipProductionTime = 2000;
 
+hangarShips = new BehaviorSubject<SpaceShip[]>([])
+
   constructor() { }
 
   produceShips(formValue:OrderFromValue):Observable<SpaceShip>{
@@ -21,7 +23,8 @@ static shipProductionTime = 2000;
     
     return interval(SpaceShipService.shipProductionTime).pipe(
       map(()=> new shipClass()),
-      take(formValue.shipCount)
+      take(formValue.shipCount),
+      tap((spaceShip)=> this.hangarShips.next([...this.hangarShips.getValue(), spaceShip]))
     );
 
   }
