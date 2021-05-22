@@ -1,5 +1,5 @@
 <h1>My Pilot Room</h1>
-<app-pilot *ngFor="let pilot of pilots" [pilot]="pilot" [class.selected]="selectedPilot === pilot">
+<app-pilot *ngFor="let pilot of pilots" [pilot]="pilot" [class.selected]="selectedPilot === pilot" >
   <button class="select-button" *ngIf="selectedPilot !== pilot; else deselectButton" (click)="select(pilot)">
     SELECT 
   </button>

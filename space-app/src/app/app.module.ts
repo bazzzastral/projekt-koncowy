@@ -4,21 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpaceModule } from './space/space.module';
-//import { EngineersRoomComponent} from './space/engineers-room/engineers-room.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SpaceImageDirective } from './shared/space-image.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //EngineersRoomComponent,
-  
+    SpaceImageDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SpaceModule
-
+    SpaceModule,
+    HttpClientModule
   ],
+
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    SpaceImageDirective
+  ]
 })
 export class AppModule { }

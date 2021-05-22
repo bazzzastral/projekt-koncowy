@@ -25,7 +25,8 @@
 
 
     <div class="control-group">
-         <button type="submit" [disabled]="form.invalid">Produkuj</button>
+         <button type="submit" [disabled]="form.invalid || isProducing">Produkuj</button>
+         <span class="info" *ngIf= "isProducing">Trwa produkcja...</span>
     </div>
     
 </form>

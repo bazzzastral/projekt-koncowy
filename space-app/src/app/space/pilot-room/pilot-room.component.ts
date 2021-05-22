@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Pilot } from '../pilot';
+import { PilotService } from '../pilot.service';
 
 
 @Component({
@@ -13,11 +14,13 @@ export class PilotRoomComponent implements OnInit {
   pilots: Pilot[] =[];
   selectedPilot: Pilot =null;
 
-  constructor() { }
+  constructor(private pilotService: PilotService) { }
 
   ngOnInit(): void {
-    this.pilots.push(new Pilot('Fredie Mercury', './assets/mercury-pilot.png'))
-    this.pilots.push(new Pilot('Tom Araya'))
+    this. pilotService.getPilots().subscribe({
+      next:(pilots) => this.pilots=pilots,
+      error:()=> alert("Coś poszło nie tak...")
+    })
   }
 
   select(pilot: Pilot):void {

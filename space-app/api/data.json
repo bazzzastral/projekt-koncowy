@@ -1,0 +1,66 @@
+{
+    "pilots" : [
+    {
+        "id": 1,
+        "firstName": "Elon",
+        "lastName": "Musk",
+        "imageUrl": "/assets/first-pilot.png"
+    },
+    {
+        
+        "id": 2,
+        "firstName": "Freddie",
+        "lastName": "Mercury",
+        "imageUrl": "/assets/mercury-pilot.png"
+    },
+    {
+        "id": 3,
+        "firstName": "Alice",
+        "lastName": "Copper",
+        "imageUrl": null
+    },
+    {
+        "id": 4,
+        "firstName": "Toumas",
+        "lastName": "Holopainen",
+        "imageUrl": "/assets/Thomas.png"
+        
+    },
+    {
+        "id": 5,
+        "firstName": "Nergal",
+        "lastName": " ",
+        "imageUrl": "/assets/nergal.png"
+        
+    }
+   
+ ],
+ "mechanics" : [
+    {
+        "id": 1,
+        "firstName": "Curt",
+        "lastName": "Cobain",
+        "imageUrl": "/assets/first-pilot.png"
+    },
+    {
+        
+        "id": 2,
+        "firstName": "Marylin",
+        "lastName": "Manson",
+        "imageUrl": "/assets/mercury-pilot.png"
+    },
+    {
+        "id": 3,
+        "firstName": "Adam",
+        "lastName": "Darski",
+        "imageUrl": null
+    },
+    {
+        "id": 4,
+        "firstName": "Alexi",
+        "lastName": "Laiho",
+        "imageUrl": "/assets/unknown-pilot.png"
+    }
+ ]
+
+}
